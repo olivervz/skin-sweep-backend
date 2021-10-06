@@ -1,5 +1,12 @@
+/.vscode
+.DS_Store
+
 .env
 .env.development
 .env.production
 
 /node_modules
+
+# Ignore training data till we set up a dedicated git submodule for it
+/data/ham10000/images/*.jpg
+/data/ham10000/segmentation/*.png
