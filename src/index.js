@@ -2,7 +2,11 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const routes = require("./api/routes/index.js");
+const mysql = require("mysql");
 require("dotenv").config();
+
+// const db = mysql.createPool(process.env.CLEARDB_DATABASE_URL);
+const db = mysql.createPool("localhost");
 
 // Express Middleware
 app = express();
