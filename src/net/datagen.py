@@ -1,4 +1,3 @@
-from keras import callbacks
 import numpy as np
 import keras.applications.mobilenet as mobilenet
 
@@ -19,8 +18,8 @@ def top_3_accuracy(y_true, y_pred):
     return top_k_categorical_accuracy(y_true, y_pred, k=3)
 
 
-training_dir = '/Users/alan/OneDrive/Documents/neu21/Capstone/skin-sweep-backend/src/net/data/ham10000/images'
-validation_dir = '/Users/alan/OneDrive/Documents/neu21/Capstone/skin-sweep-backend/src/net/data/ham10000/validation'
+training_dir = '../../data/ham10000/images/'
+validation_dir = '../../data/ham10000/validation'
 
 training_count = 10015
 validation_count = 195
@@ -82,7 +81,7 @@ model.compile(
     metrics=[K.categorical_crossentropy, top_2_accuracy, top_3_accuracy]
 )
 
-output_file = 'model.h5'
+output_file = 'skinsweep.model'
 
 checkpoint = ModelCheckpoint(
     output_file,
